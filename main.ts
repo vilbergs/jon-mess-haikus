@@ -1,8 +1,7 @@
 import { serve, readJson } from './deps.ts'
 
-const port: number = Number(Deno.env.get('PORT')) || 8000
-
-console.log(port)
+console.log(`Env Port: ${Deno.env.get('PORT')}`)
+const port: number = Number(Deno.env.get('PORT')) || 8080
 
 const server = serve({ port })
 
