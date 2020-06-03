@@ -1,8 +1,12 @@
 import { serve, readJson } from './deps.ts'
 
-const server = serve({ port: 8000 })
+const port: number = Number(Deno.env.get('PORT')) || 8000
 
-console.log('Server running at http://localhost:8000')
+console.log(port)
+
+const server = serve({ port })
+
+console.log(`Server running at http://localhost:${port}`)
 
 for await (const req of server) {
   const haiku = await randomHaiku()
