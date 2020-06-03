@@ -1,7 +1,8 @@
-import { serve } from 'https://deno.land/std/http/server.ts'
-import { readJson } from 'https://deno.land/std/fs/read_json.ts'
+import { serve, readJson } from './deps.ts'
 
 const server = serve({ port: 8000 })
+
+console.log('Server running at http://localhost:8000')
 
 for await (const req of server) {
   const haiku = await randomHaiku()
