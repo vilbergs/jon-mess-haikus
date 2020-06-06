@@ -1,9 +1,8 @@
 import { serve, readJson } from './deps.ts'
 
-console.log(`Env Port: ${Deno.env.get('PORT')}`)
 const port: number = Number(Deno.env.get('PORT')) || 8080
 
-const server = serve({ port })
+const server = serve(`0.0.0.0:${port}`)
 
 console.log(`Server running at http://localhost:${port}`)
 
